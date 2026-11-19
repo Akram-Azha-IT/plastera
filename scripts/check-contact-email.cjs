@@ -24,7 +24,7 @@ test("email preserves French text and query characters without adding recipients
   );
   const url = new URL(buildContactEmail(data, "matiere"));
   assert.equal(url.protocol, "mailto:");
-  assert.equal(url.pathname, "contact@azharplastics.com");
+  assert.equal(url.pathname, "contact@plastera-europe.com");
   assert.deepEqual([...url.searchParams.keys()], ["subject", "body"]);
   assert.equal(
     url.searchParams.get("subject"),

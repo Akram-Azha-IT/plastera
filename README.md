@@ -50,7 +50,7 @@ La direction des transitions s’inspire des expériences [Sticky Grid Scroll](h
 
 ## Contact
 
-Le formulaire prépare un email prérempli à destination de `contact@azharplastics.com` et ouvre la messagerie séparément. Le visiteur vérifie le contenu puis effectue l’envoi dans sa messagerie. Le site ne dispose pas de service d’envoi d’emails côté serveur et n’enregistre pas les champs du formulaire.
+Le formulaire prépare un email prérempli à destination de `contact@plastera-europe.com` et ouvre la messagerie séparément. Le visiteur vérifie le contenu puis effectue l’envoi dans sa messagerie. Le site ne dispose pas de service d’envoi d’emails côté serveur et n’enregistre pas les champs du formulaire.
 
 ## Tests
 

@@ -170,12 +170,12 @@ function Form() {
         </p>
         <a
           className="text-link"
-          href="mailto:contact@azharplastics.com"
+          href="mailto:contact@plastera-europe.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Mail size={18} />
-          contact@azharplastics.com
+          contact@plastera-europe.com
         </a>
         <div className="aside-note">
           <h3>Pour avancer efficacement</h3>
@@ -208,7 +208,7 @@ export default function Page() {
             Les champs saisis servent à préparer votre email. Ce formulaire ne
             les enregistre pas sur le serveur du site. L’envoi s’effectue depuis
             votre messagerie, à votre initiative. Pour toute question concernant
-            vos données, contactez contact@azharplastics.com.
+            vos données, contactez contact@plastera-europe.com.
           </p>
         </div>
       </div>

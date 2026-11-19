@@ -1,4 +1,4 @@
-export const contactEmail = "contact@azharplastics.com";
+export const contactEmail = "contact@plastera-europe.com";
 
 export function buildContactEmail(data: FormData, kind: string) {
   const field = (name: string) => {

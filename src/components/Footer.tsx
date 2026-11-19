@@ -26,11 +26,11 @@ export default function Footer() {
               Présenter votre projet <ArrowUpRight size={16} />
             </Link>
             <a
-              href="mailto:contact@azharplastics.com"
+              href="mailto:contact@plastera-europe.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              contact@azharplastics.com
+              contact@plastera-europe.com
             </a>
             <Link href="/expertise">Notre approche</Link>
           </div>

@@ -188,11 +188,11 @@ export default function IndustrialHome() {
               Commençons par un échange.
             </p>
             <a
-              href="mailto:contact@azharplastics.com"
+              href="mailto:contact@plastera-europe.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              contact@azharplastics.com <ArrowUpRight size={16} />
+              contact@plastera-europe.com <ArrowUpRight size={16} />
             </a>
           </div>
         </div>
