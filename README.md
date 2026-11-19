@@ -1,4 +1,4 @@
-# Azhar Plastics
+# Plastera
 
 Site vitrine pour la représentation exclusive de Shibaura Machine en France et la commercialisation de matières premières pour la plasturgie.
 
@@ -44,6 +44,10 @@ Les animations respectent la préférence système de réduction des mouvements.
 
 Le catalogue machines est organisé par familles. Les matières premières sont réparties entre commodités et matières techniques. Le hero de l’accueil adapte le carrousel Codrops Demo 1 et suit le défilement de la page.
 
+`ExpertiseJourney.tsx` présente la machine et la matière dans une scène liée au défilement avec GSAP ScrollTrigger. La séquence se raccourcit sur mobile ; les écrans courts et la préférence de réduction des mouvements conservent les deux présentations accessibles sans blocage du défilement. `HomeMotion.tsx` coordonne les titres, la lecture progressive, l’ouverture du visuel matières et les entrées des applications industrielles. Chaque composant nettoie ses animations à la navigation.
+
+La direction des transitions s’inspire des expériences [Sticky Grid Scroll](https://tympanus.net/codrops/2026/03/02/sticky-grid-scroll-building-a-scroll-driven-animated-grid/) et [On-Scroll Expanding Image](https://tympanus.net/codrops/2024/04/02/on-scroll-expanding-image-animation-within-typography/) de Codrops, avec une implémentation propre au site.
+
 ## Contact
 
 Le formulaire prépare un email prérempli à destination de `contact@azharplastics.com` et ouvre la messagerie séparément. Le visiteur vérifie le contenu puis effectue l’envoi dans sa messagerie. Le site ne dispose pas de service d’envoi d’emails côté serveur et n’enregistre pas les champs du formulaire.
@@ -56,6 +60,7 @@ node scripts/check-material-selection.cjs
 node scripts/check-material-gallery.cjs
 node scripts/check-hero-carousel.cjs
 node scripts/check-approach-orbit.cjs
+node scripts/check-expertise-journey.cjs
 node scripts/check-contact-email.cjs
 ```
 

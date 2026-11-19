@@ -34,3 +34,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Plastera homepage photography and type
+
+- hero-injection-production.jpg (1913 × 994): Shibaura Machine, https://shibaura-machine.com/media/h3ynti3o/new-berlin-interior-plant-enhanced.jpg. Manufacturing context illustration, not a Plastera customer reference.
+- hero-robotics-cell.jpg (1903 × 800): TM Robotics, https://www.tmrobotics.com/images/slider/6/1903x800-Untitled%20design.jpg. SCARA robots in a work cell.
+- hero-polypropylene.jpg (3500 × 2499): Quantum Chemical Corporation / Science History Institute, Polypropylene Pellets, via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Polypropylene_Pellets_-_DPLA_-_f7c2fa29d14525ce21219452f4a1a316.jpg. CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Original image retained, responsive framing applied with CSS.
+- Montserrat regular and bold: the font family used by Shibaura Machine, self-hosted under the SIL Open Font License. See public/fonts/OFL-Montserrat.txt.

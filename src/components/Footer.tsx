@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import AzharLogo from "./AzharLogo";
+import PlasteraLogo from "./PlasteraLogo";
 export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="shell">
         <div className="footer-top">
           <div>
-            <AzharLogo />
+            <PlasteraLogo />
             <p>
               La technologie japonaise.
               <br />
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Azhar Plastics</span>
+          <span>© 2026 Plastera</span>
           <span>Représentant exclusif Shibaura Machine en France</span>
           <Link href="/contact#confidentialite">Confidentialité</Link>
           <Link href="/credits-photos">Crédits photos</Link>

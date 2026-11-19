@@ -159,8 +159,9 @@ p {
   flex-shrink: 0;
 }
 .brand-name {
+  font-family: var(--font-montserrat), Arial, sans-serif;
   font-size: 43px;
-  letter-spacing: -0.09em;
+  letter-spacing: -0.06em;
   font-weight: 650;
   line-height: 1;
 }
@@ -1905,5 +1906,41 @@ p {
   .family-range {
     scroll-snap-align: start;
     min-width: 0;
+  }
+}
+/* The supplied artwork keeps its original lettering and colours. */
+.brand-image {
+  background: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.brand-logo-image {
+  display: block;
+  width: 240px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center;
+}
+.site-footer .brand-logo-image {
+  width: 280px;
+  height: 80px;
+}
+@media (max-width: 600px) {
+  .brand-logo-image {
+    width: 180px;
+    height: 52px;
+  }
+  .site-footer .brand-logo-image {
+    width: 240px;
+    height: 70px;
+  }
+  .header-inner {
+    gap: 12px;
+  }
+}
+@media (max-width: 360px) {
+  .brand-logo-image {
+    width: 150px;
+    height: 46px;
   }
 }

@@ -4,7 +4,7 @@ import MaterialExplorer from "@/components/MaterialExplorer";
 import CtaSection from "@/components/CtaSection";
 import s from "./materials.module.css";
 export const metadata = {
-  title: "Matières premières plasturgie en France | Azhar Plastics",
+  title: "Matières premières plasturgie en France | Plastera",
   description:
     "Matières de commodité : PE, PP, PET, PVC. Matières techniques : PA6, PA66, PPS, PPA, PBT, PET, ABS, PC/ABS, GPPS, HIPS, SAN et TPV. Sélection selon votre application.",
 };

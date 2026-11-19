@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/** Scoped choreography; every animation reverts when the route unmounts. */
 export default function HomeMotion({
   children,
 }: {
@@ -16,115 +15,163 @@ export default function HomeMotion({
     const scope = root.current;
     if (!scope) return;
     const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      const ctx = gsap.context(() => {
-        gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
-          gsap.from(el, {
-            y: 55,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 92%", once: true },
-          });
-        });
-        gsap.utils.toArray<HTMLElement>("[data-curtain]").forEach((el) => {
-          gsap.from(el, {
-            clipPath: "inset(12% 0 12% 0)",
-            scale: 0.96,
-            duration: 1.15,
-            ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 90%", once: true },
-          });
-        });
-        gsap.utils
-          .toArray<HTMLElement>("[data-reading-word]")
-          .forEach((el, i) => {
-            gsap.fromTo(
-              el,
-              { color: "#c0c5ce" },
-              {
-                color: "#101b2e",
-                ease: "none",
+    media.add(
+      {
+        desktop: "(min-width: 761px)",
+        mobile: "(max-width: 760px)",
+        reduced: "(prefers-reduced-motion: reduce)",
+      },
+      (context) => {
+        if (context.conditions?.reduced) return;
+        const mobile = context.conditions?.mobile;
+        const motion = gsap.context(() => {
+          gsap.utils
+            .toArray<HTMLElement>("[data-reveal]")
+            .forEach((element) => {
+              const lines = element.querySelectorAll("[data-title-line]");
+              if (lines.length) {
+                gsap.from(lines, {
+                  yPercent: 115,
+                  rotation: 2,
+                  duration: 0.85,
+                  stagger: 0.1,
+                  ease: "power4.out",
+                  scrollTrigger: {
+                    trigger: element,
+                    start: "top 87%",
+                    once: true,
+                  },
+                });
+                return;
+              }
+              gsap.from(element, {
+                y: mobile ? 20 : 32,
+                opacity: 0,
+                duration: 0.75,
+                ease: "power3.out",
                 scrollTrigger: {
-                  trigger: "[data-reading]",
-                  start: () => "top " + (85 - i * 1.4) + "%",
-                  end: () => "top " + (62 - i * 1.4) + "%",
-                  scrub: true,
+                  trigger: element,
+                  start: "top 91%",
+                  once: true,
+                },
+              });
+            });
+
+          // One scrubbed animation gives the sentence a single, legible reading rhythm.
+          const words = scope.querySelectorAll("[data-reading-word]");
+          gsap.fromTo(
+            words,
+            { color: "#8490a2" },
+            {
+              color: "#101b2e",
+              stagger: 0.08,
+              duration: 0.25,
+              ease: "none",
+              scrollTrigger: {
+                trigger: "[data-reading]",
+                start: "top 83%",
+                end: "top 36%",
+                scrub: 0.25,
+              },
+            },
+          );
+
+          const aperture = scope.querySelector<HTMLElement>(
+            "[data-material-aperture]",
+          );
+          if (aperture) {
+            gsap.fromTo(
+              aperture.querySelector("[data-aperture-media]"),
+              {
+                clipPath: mobile
+                  ? "inset(8% 10% round 70px)"
+                  : "inset(10% 24% round 180px)",
+              },
+              {
+                clipPath: "inset(0% 0% round 0px)",
+                ease: "power2.out",
+                scrollTrigger: {
+                  trigger: aperture,
+                  start: "top 92%",
+                  end: "top 22%",
+                  scrub: 0.45,
                 },
               },
             );
-          });
-      }, scope);
-      return () => ctx.revert();
-    });
-    media.add(
-      "(min-width: 901px) and (prefers-reduced-motion: no-preference)",
-      () => {
-        const flow = gsap.context(() => {
-          gsap.utils
-            .toArray<HTMLElement>("[data-section-flow]")
-            .forEach((section) => {
-              gsap.fromTo(
-                section,
-                { clipPath: "inset(6% 2% 0% 2% round 35px)" },
-                {
-                  clipPath: "inset(0% 0% 0% 0% round 0px)",
-                  ease: "none",
-                  scrollTrigger: {
-                    trigger: section,
-                    start: "top 95%",
-                    end: "top 30%",
-                    scrub: 0.8,
-                  },
+            gsap.fromTo(
+              aperture.querySelector("img"),
+              { scale: 1.15 },
+              {
+                scale: 1,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: aperture,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: 0.5,
                 },
-              );
+              },
+            );
+            gsap.from(aperture.querySelector("[data-aperture-copy]"), {
+              y: 28,
+              opacity: 0,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: aperture,
+                start: "top 66%",
+                once: true,
+              },
+            });
+          }
+
+          gsap.utils
+            .toArray<HTMLElement>("[data-sector-motion]")
+            .forEach((row) => {
+              gsap
+                .timeline({
+                  scrollTrigger: { trigger: row, start: "top 90%", once: true },
+                  defaults: { duration: 0.85, ease: "power3.out" },
+                })
+                .from(
+                  row.querySelector("[data-sector-photo]"),
+                  { clipPath: "inset(0 100% 0 0)" },
+                  0,
+                )
+                .from(
+                  row.querySelector("[data-sector-copy]"),
+                  { x: mobile ? 0 : 22, y: mobile ? 16 : 0, opacity: 0 },
+                  0.12,
+                )
+                .from(
+                  row.querySelector("[data-sector-arrow]"),
+                  { scale: 0.7, opacity: 0 },
+                  0.22,
+                );
             });
         }, scope);
-        const story = scope.querySelector<HTMLElement>("[data-story]");
-        if (!story) return () => flow.revert();
-        story.dataset.ready = "true";
-        story.dataset.active = "0";
-        const triggers = Array.from(
-          story.querySelectorAll<HTMLElement>("[data-chapter]"),
-        ).map((chapter, i) =>
-          ScrollTrigger.create({
-            trigger: chapter,
-            start: "top 55%",
-            end: "bottom 55%",
-            onEnter: () => {
-              story.dataset.active = String(i);
-            },
-            onEnterBack: () => {
-              story.dataset.active = String(i);
-            },
-          }),
-        );
-        return () => {
-          flow.revert();
-          triggers.forEach((t) => t.kill());
-          delete story.dataset.ready;
-          delete story.dataset.active;
-        };
+        return () => motion.revert();
       },
     );
-    // Font swaps and late image decoding must not leave stale trigger positions.
-    const refresh = () => ScrollTrigger.refresh();
+
+    let disposed = false;
+    let frame = 0;
+    const refresh = () => {
+      if (disposed) return;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => ScrollTrigger.refresh());
+    };
     const resize = new ResizeObserver(refresh);
     resize.observe(scope);
-    scope
-      .querySelectorAll("img")
-      .forEach((img) => img.addEventListener("load", refresh));
-    let disposed = false;
-    document.fonts.ready.then(() => {
-      if (!disposed) refresh();
-    });
+    const images = scope.querySelectorAll("img");
+    images.forEach((image) => image.addEventListener("load", refresh));
+    document.fonts.ready.then(refresh);
     return () => {
       disposed = true;
+      cancelAnimationFrame(frame);
       resize.disconnect();
       media.revert();
-      scope
-        .querySelectorAll("img")
-        .forEach((img) => img.removeEventListener("load", refresh));
+      images.forEach((image) => image.removeEventListener("load", refresh));
     };
   }, []);
   return <div ref={root}>{children}</div>;

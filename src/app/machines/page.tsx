@@ -1,7 +1,7 @@
 import IndustrialPage from "@/components/IndustrialPage";
 import MachineCatalog from "@/components/MachineCatalog";
 export const metadata = {
-  title: "Catalogue machines Shibaura | Azhar Plastics France",
+  title: "Catalogue machines Shibaura | Plastera France",
   description:
     "Choisissez une famille Shibaura, trouvez votre modèle et demandez un devis directement. Injection, fonderie, usinage et robotique.",
 };

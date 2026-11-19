@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import AzharLogo from "./AzharLogo";
+import PlasteraLogo from "./PlasteraLogo";
 const links = [
   ["/machines", "Machines Shibaura"],
   ["/matieres-premieres", "Matières premières"],
@@ -99,7 +99,7 @@ export default function Navbar() {
       data-overlay={path === "/" && overHero && !open}
     >
       <div className="header-inner">
-        <AzharLogo />
+        <PlasteraLogo />
         <nav className="desktop-nav" aria-label="Navigation principale">
           {links.map(([href, label]) => (
             <Link

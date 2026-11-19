@@ -95,9 +95,9 @@ export default function ProductHero() {
         ? "reduced"
         : "ScrollTimeline" in window &&
             "ViewTimeline" in window &&
-            CSS.supports("timeline-scope", "--azhar-slide-1") &&
-            CSS.supports("animation-timeline", "--azhar-slide-1") &&
-            CSS.supports("view-timeline", "--azhar-slide-1 x") &&
+            CSS.supports("timeline-scope", "--plastera-slide-1") &&
+            CSS.supports("animation-timeline", "--plastera-slide-1") &&
+            CSS.supports("view-timeline", "--plastera-slide-1 x") &&
             CSS.supports("animation-range-start", "30cqw")
           ? "native"
           : "fallback";
@@ -131,7 +131,7 @@ export default function ProductHero() {
               )
               .to(
                 image,
-                { xPercent: -24, scale: 1.5, duration: 0.4125, ease: "none" },
+                { xPercent: -24, scale: 1.08, duration: 0.4125, ease: "none" },
                 0.5875,
               );
             const text = gsap.timeline({ paused: true });
@@ -327,7 +327,7 @@ export default function ProductHero() {
               data-active={active === index}
               style={
                 {
-                  "--scene-timeline": "--azhar-slide-" + (index + 1),
+                  "--scene-timeline": "--plastera-slide-" + (index + 1),
                   "--scene-position": slide.position,
                   "--scene-mobile-position": slide.mobilePosition,
                 } as CSSProperties
@@ -339,8 +339,8 @@ export default function ProductHero() {
                 fill
                 preload={index === 0}
                 loading={index === 0 ? undefined : "eager"}
-                quality={90}
-                sizes="(max-width: 800px) 160vw, 125vw"
+                quality={95}
+                sizes="100vw"
                 className={s.photo}
                 draggable={false}
               />
@@ -379,7 +379,7 @@ export default function ProductHero() {
               inert={active !== index}
               style={
                 {
-                  "--scene-timeline": "--azhar-slide-" + (index + 1),
+                  "--scene-timeline": "--plastera-slide-" + (index + 1),
                 } as CSSProperties
               }
             >

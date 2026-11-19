@@ -54,7 +54,7 @@ export default function ApproachExplorer() {
         <span className="explorer-caption">{approaches[active].label}</span>
       </div>
       <div className="explorer-content">
-        <span className="eyebrow">La méthode Azhar Plastics</span>
+        <span className="eyebrow">La méthode Plastera</span>
         <h2>
           La bonne réponse
           <br />

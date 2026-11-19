@@ -3,16 +3,16 @@ import PageIntro from "@/components/PageIntro";
 import s from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Crédits photos | Azhar Plastics",
+  title: "Crédits photos | Plastera",
   description:
-    "Sources et crédits des photographies présentées sur le site Azhar Plastics.",
+    "Sources et crédits des photographies présentées sur le site Plastera.",
 };
 
 export default function PhotoCredits() {
   return (
     <>
       <PageIntro
-        eyebrow="Azhar Plastics"
+        eyebrow="Plastera"
         title="Crédits photos"
         description="Sources et crédits des photographies présentées sur le site."
       />
@@ -27,9 +27,27 @@ export default function PhotoCredits() {
             </a>
             .
           </p>
+          <p>
+            Photographie d’atelier d’injection :{" "}
+            <a href="https://shibaura-machine.com/injection-molding-machines/">
+              Shibaura Machine
+            </a>
+            . Cellule de robots SCARA :{" "}
+            <a href="https://www.tmrobotics.com/">TM Robotics</a>. Ces visuels
+            illustrent les équipements et leurs applications industrielles.
+          </p>
         </section>
         <section aria-labelledby="credits-polymeres">
           <h2 id="credits-polymeres">Photographie des polymères</h2>
+          <p>
+            <a href="https://commons.wikimedia.org/wiki/File:Polypropylene_Pellets_-_DPLA_-_f7c2fa29d14525ce21219452f4a1a316.jpg">
+              Polypropylene Pellets
+            </a>
+            , Quantum Chemical Corporation / Science History Institute, via
+            Wikimedia Commons. Licence{" "}
+            <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+            . Photographie originale conservée ; cadrage adapté par CSS.
+          </p>
           <p>
             <a href="https://commons.wikimedia.org/wiki/File:Pellet_azul.jpg">
               Pellet azul

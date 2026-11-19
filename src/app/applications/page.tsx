@@ -5,7 +5,7 @@ import { sectors } from "@/data/catalog";
 import IndustrialPage from "@/components/IndustrialPage";
 import CtaSection from "@/components/CtaSection";
 export const metadata = {
-  title: "Applications en plasturgie | Azhar Plastics France",
+  title: "Applications en plasturgie | Plastera France",
 };
 export default function Page() {
   return (

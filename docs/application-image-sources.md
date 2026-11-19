@@ -1,6 +1,6 @@
 # Photographies des applications industrielles
 
-Ces photographies illustrent des contextes de production. Elles ne constituent pas des références clients d’Azhar Plastics et n’identifient pas les installations comme des équipements Shibaura.
+Ces photographies illustrent des contextes de production. Elles ne constituent pas des références clients d’Plastera et n’identifient pas les installations comme des équipements Shibaura.
 
 Les photos sont utilisées dans la section « Applications industrielles » de l’accueil et sur la page Applications. Les originaux sélectionnés ont été inspectés visuellement avant intégration. Les réglages `imagePosition` du catalogue conservent le sujet lors du recadrage par l’interface.
 

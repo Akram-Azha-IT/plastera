@@ -16,7 +16,7 @@ export async function generateMetadata({
   const m = machines.find((x) => x.slug === slug);
   return {
     title: m
-      ? m.name + " | Shibaura Machine France  Azhar Plastics"
+      ? m.name + " | Shibaura Machine France  Plastera"
       : "Machine non trouvée",
   };
 }

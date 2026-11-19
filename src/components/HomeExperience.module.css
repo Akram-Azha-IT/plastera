@@ -561,8 +561,28 @@
   min-height: 540px;
   display: flex;
   align-items: center;
-  background: #edf1f9;
+  background: #0b192d;
   overflow: hidden;
+}
+.bannerMedia {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #0b192d;
+}
+.titleMask {
+  display: block;
+  overflow: clip;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+}
+.titleMask > span {
+  display: block;
+  transform-origin: left bottom;
+}
+.sectionTitle h2 > .titleMask:first-child {
+  color: var(--ink);
 }
 .materialBanner > :global(.shell) {
   width: 100%;

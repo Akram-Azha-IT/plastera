@@ -17,7 +17,7 @@ export async function generateMetadata({
   const family = machineFamilies.find((item) => item.slug === slug);
   return {
     title: family
-      ? family.title + " Shibaura Machine | Azhar Plastics France"
+      ? family.title + " Shibaura Machine | Plastera France"
       : "Famille non trouvée",
     description: family?.description,
   };

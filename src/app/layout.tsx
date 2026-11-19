@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,12 +17,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const montserrat = localFont({
+  src: [
+    {
+      path: "../../public/fonts/montserrat-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/montserrat-bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Azhar Plastics | Machines Shibaura & matières premières en France",
+  icons: { icon: [{ url: "/brand/favicon.svg", type: "image/svg+xml" }] },
+  title: "Plastera | Machines Shibaura & matières premières en France",
   description:
     "Représentant exclusif Shibaura Machine en France. Équipements d’injection plastique et matières premières pour la plasturgie.",
   openGraph: {
-    title: "Azhar Plastics  Machines & matières",
+    title: "Plastera  Machines & matières",
     description: "Deux expertises pour la plasturgie en France.",
     locale: "fr_FR",
     type: "website",
@@ -36,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-[#080808] font-sans selection:bg-industrial-blue selection:text-white">
         <a href="#contenu" className="skip-link">

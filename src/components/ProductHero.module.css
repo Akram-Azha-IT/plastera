@@ -14,9 +14,10 @@
   overflow: hidden;
   container-type: size;
   timeline-scope:
-    --azhar-hero-scroll, --azhar-slide-1, --azhar-slide-2, --azhar-slide-3;
+    --plastera-hero-scroll, --plastera-slide-1, --plastera-slide-2,
+    --plastera-slide-3;
   height: 100svh;
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: var(--font-montserrat), Arial, sans-serif;
   background: #071426;
   color: #fff;
 }
@@ -53,10 +54,7 @@
   object-fit: cover;
   object-position: var(--scene-position);
 }
-.sceneImage[data-visual="robot"] .photo {
-  object-fit: contain;
-  padding: 100px 3% 35px 28%;
-}
+
 .veil {
   z-index: 1;
   pointer-events: none;
@@ -78,7 +76,7 @@
   overflow-y: hidden;
   scroll-snap-type: none;
   overscroll-behavior-x: contain;
-  scroll-timeline: --azhar-hero-scroll x;
+  scroll-timeline: --plastera-hero-scroll x;
   scrollbar-width: none;
   cursor: grab;
 }
@@ -107,13 +105,13 @@
   scroll-snap-align: start;
 }
 .scrollItem:nth-child(1) {
-  view-timeline: --azhar-slide-1 x;
+  view-timeline: --plastera-slide-1 x;
 }
 .scrollItem:nth-child(2) {
-  view-timeline: --azhar-slide-2 x;
+  view-timeline: --plastera-slide-2 x;
 }
 .scrollItem:nth-child(3) {
-  view-timeline: --azhar-slide-3 x;
+  view-timeline: --plastera-slide-3 x;
 }
 .captions {
   z-index: 3;
@@ -138,7 +136,7 @@
   left: 5%;
   bottom: 112px;
   right: 5%;
-  max-width: 860px;
+  max-width: 1100px;
 }
 .labelMask,
 .headlineMask,
@@ -156,10 +154,10 @@
   margin-bottom: 20px;
 }
 .headline {
-  font-size: clamp(52px, min(6.2vw, 9svh), 92px);
+  font-size: clamp(64px, min(8vw, 12svh), 124px);
   line-height: 1.04;
-  letter-spacing: -0.04em;
-  font-weight: 600;
+  letter-spacing: -0.045em;
+  font-weight: 700;
   text-wrap: balance;
   color: #fff;
   padding: 0 8px 10px 0;
@@ -167,7 +165,8 @@
 .headline em {
   display: block;
   font-style: normal;
-  font-weight: 500;
+  font-size: 0.84em;
+  font-weight: 700;
   color: #d2e4ff;
 }
 .copyMask {
@@ -306,7 +305,7 @@
 }
 .hero[data-mode="native"] .progress > span {
   animation: codrops-progress linear both;
-  animation-timeline: --azhar-hero-scroll;
+  animation-timeline: --plastera-hero-scroll;
 }
 @keyframes codrops-grow {
   0% {
@@ -318,7 +317,7 @@
     transform: none;
   }
   100% {
-    transform: scale(1.5) translateX(-16%);
+    transform: scale(1.08) translateX(-22.22%);
   }
 }
 @keyframes codrops-text {
@@ -366,9 +365,7 @@
   .photo {
     object-position: var(--scene-mobile-position);
   }
-  .sceneImage[data-visual="robot"] .photo {
-    padding: 85px 0 140px 12%;
-  }
+
   .description {
     max-width: 480px;
     font-size: 15px;
@@ -380,7 +377,7 @@
     bottom: 104px;
   }
   .headline {
-    font-size: clamp(36px, 10.5vw, 58px);
+    font-size: clamp(42px, 11vw, 66px);
     letter-spacing: -0.035em;
   }
   .label {
@@ -437,7 +434,7 @@
 }
 @media (max-width: 360px) {
   .headline {
-    font-size: 36px;
+    font-size: 39px;
   }
   .description {
     font-size: 14px;

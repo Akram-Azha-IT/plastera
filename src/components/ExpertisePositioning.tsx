@@ -43,7 +43,7 @@ export default function ExpertisePositioning() {
           <span>La proximité en France.</span>
         </h2>
         <p>
-          Représentant exclusif de Shibaura Machine en France, Azhar Plastics
+          Représentant exclusif de Shibaura Machine en France, Plastera
           réunit les équipements et les matières premières pour faire avancer
           votre production.
         </p>
