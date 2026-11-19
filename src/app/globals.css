@@ -1908,10 +1908,10 @@ p {
     min-width: 0;
   }
 }
-/* The supplied artwork keeps its original lettering and colours. */
+/* Transparent artwork: colour on light surfaces, white over the homepage hero. */
 .brand-image {
-  background: #fff;
-  border-radius: 3px;
+  background: transparent;
+  border-radius: 0;
   overflow: hidden;
 }
 .brand-logo-image {
@@ -1943,4 +1943,8 @@ p {
     width: 150px;
     height: 46px;
   }
+}
+
+.site-header[data-overlay="true"] .brand-logo-image {
+  filter: brightness(0) invert(1);
 }

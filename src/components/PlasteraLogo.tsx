@@ -12,7 +12,7 @@ export default function PlasteraLogo({
       aria-label="Plastera, accueil"
     >
       <Image
-        src="/brand/plasturgie-logo.png"
+        src="/brand/plasturgie-logo-transparent.png"
         alt="Logo Pastera Plasturgie"
         width={2172}
         height={724}
