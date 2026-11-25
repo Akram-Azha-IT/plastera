@@ -5,18 +5,22 @@
 }
 .credits h2 {
   margin-bottom: 16px;
-  font-size: clamp(23px, 3vw, 30px);
-  letter-spacing: -0.035em;
+  font-size: var(--text-heading);
+  letter-spacing: var(--tracking-display);
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.12;
 }
 .credits p {
   max-width: 740px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .credits p + p {
   margin-top: 12px;
 }
 .credits a {
-  color: var(--accent);
+  color: var(--accent-ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

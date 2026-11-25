@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+
 export default function PlasteraLogo({
   className = "",
 }: {
@@ -11,15 +11,7 @@ export default function PlasteraLogo({
       className={"brand brand-image " + className}
       aria-label="Plastera, accueil"
     >
-      <Image
-        src="/brand/plasturgie-logo-transparent.png"
-        alt="Logo Pastera Plasturgie"
-        width={2172}
-        height={724}
-        sizes="(max-width: 600px) 180px, 240px"
-        quality={90}
-        className="brand-logo-image"
-      />
+      <span className="brand-logo-image" aria-hidden="true" />
     </Link>
   );
 }

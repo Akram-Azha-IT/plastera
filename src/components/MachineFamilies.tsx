@@ -1,14 +1,8 @@
 "use client";
-import {
-  useId,
-  useState,
-  useSyncExternalStore,
-  useRef,
-  useEffect,
-} from "react";
+import { useId, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { machineFamilies } from "@/data/machineFamilies";
 import styles from "./MachineFamilies.module.css";
 
@@ -24,67 +18,12 @@ export default function MachineFamilies() {
   const desktop = useSyncExternalStore(subscribe, getSnapshot, () => false);
   const [active, setActive] = useState(0);
   const id = useId();
-  const strip = useRef<HTMLDivElement>(null);
-  const [edges, setEdges] = useState({ previous: false, next: true });
-  useEffect(() => {
-    const node = strip.current;
-    if (!node) return;
-    const update = () => {
-      const previous = node.scrollLeft > 3;
-      const next = node.scrollLeft + node.clientWidth < node.scrollWidth - 3;
-      setEdges((old) =>
-        old.previous === previous && old.next === next
-          ? old
-          : { previous, next },
-      );
-    };
-    update();
-    node.addEventListener("scroll", update, { passive: true });
-    const resize = new ResizeObserver(update);
-    resize.observe(node);
-    return () => {
-      node.removeEventListener("scroll", update);
-      resize.disconnect();
-    };
-  }, []);
-  const move = (direction: number) => {
-    const node = strip.current;
-    if (!node) return;
-    const card = node.querySelector("article");
-    if (!card) return;
-    node.scrollBy({
-      left: direction * (card.getBoundingClientRect().width + 16),
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "auto"
-        : "smooth",
-    });
-  };
   return (
     <div className={styles.explorer}>
-      <div className={styles.swipeToolbar}>
-        <span>Faites glisser pour explorer</span>
-        <div>
-          <button
-            type="button"
-            onClick={() => move(-1)}
-            disabled={!edges.previous}
-            aria-label="Famille précédente"
-          >
-            <ArrowLeft size={18} />
-          </button>
-          <button
-            type="button"
-            onClick={() => move(1)}
-            disabled={!edges.next}
-            aria-label="Famille suivante"
-          >
-            <ArrowRight size={18} />
-          </button>
-        </div>
-      </div>
       <div
         className={styles.families}
-        ref={strip}
+        role="region"
+        tabIndex={0}
         aria-label="Familles de machines Shibaura"
       >
         {machineFamilies.map((family, index) => {

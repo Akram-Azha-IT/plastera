@@ -3,7 +3,7 @@ import MachineCatalog from "@/components/MachineCatalog";
 export const metadata = {
   title: "Catalogue machines Shibaura | Plastera France",
   description:
-    "Choisissez une famille Shibaura, trouvez votre modèle et demandez un devis directement. Injection, fonderie, usinage et robotique.",
+    "Les équipements Shibaura Machine pour l’injection plastique, la fonderie, l’usinage et la robotique industrielle en France.",
 };
 export default function Page() {
   return (
@@ -12,7 +12,7 @@ export default function Page() {
       eyebrow="Catalogue Shibaura Machine"
       title="Trouvez votre solution"
       accent="industrielle."
-      description="Choisissez une famille, explorez les modèles et demandez un devis directement."
+      description="Injection plastique, fonderie, usinage et robotique : les technologies Shibaura Machine au service de votre production."
       image="/images/shibaura-injection.jpg"
       position="65% 50%"
       mobilePosition="62% 50%"

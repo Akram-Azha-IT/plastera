@@ -6,9 +6,9 @@
   top: 84px;
   z-index: 20;
   padding: 12px 0;
-  background: rgb(235 241 251 / 97%);
+  background: rgb(255 255 255 / 97%);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e1e6ef;
+  border-bottom: 1px solid var(--line);
 }
 .familyTabs {
   display: grid;
@@ -18,25 +18,28 @@
 .familyTabs button {
   min-height: 52px;
   padding: 12px 15px;
-  border: 1px solid #d9e0eb;
+  border: 1px solid var(--line);
   background: #fff;
-  color: #475569;
-  font-size: 13px;
-  font-weight: 500;
+  color: var(--muted);
+  font-size: var(--text-action);
+  font-weight: 400;
   line-height: 1.35;
   border-radius: 6px;
   transition:
     background 0.25s,
     color 0.25s,
     border-color 0.25s;
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .familyTabs button[aria-selected="true"] {
-  background: #101b2e;
+  background: var(--accent-ink);
   color: white;
-  border-color: #101b2e;
+  border-color: var(--accent-ink);
 }
 .familyTabs button:hover {
-  border-color: #2455ef;
+  border-color: var(--accent-ink);
 }
 .familyPanel {
   padding-top: 28px;
@@ -47,7 +50,7 @@
   gap: 45px;
   align-items: center;
   padding-bottom: 35px;
-  border-bottom: 1px solid #e1e6ef;
+  border-bottom: 1px solid var(--line);
 }
 .familyImage {
   height: 260px;
@@ -60,13 +63,16 @@
   object-fit: cover;
 }
 .familyCopy h2 {
-  font-size: 40px;
-  line-height: 1.1;
-  letter-spacing: -0.045em;
+  font-size: var(--text-section);
+  line-height: 1.12;
+  letter-spacing: var(--tracking-display);
   margin: 15px 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
 }
 .familyCopy > p {
-  font-size: 13px;
+  font-size: var(--text-body);
   max-width: 540px;
 }
 .familyActions {
@@ -80,9 +86,13 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-size: 12px;
+  font-size: var(--text-action);
   text-decoration: underline;
   text-underline-offset: 5px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .modelSection,
 .solutions {
@@ -97,14 +107,16 @@
 }
 .modelHeading h3,
 .solutions > h3 {
-  font-size: 29px;
-  line-height: 1.15;
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-size: var(--text-heading);
+  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }
 .modelHeading p,
 .solutions > p {
-  font-size: 12px;
+  font-size: var(--text-body);
   margin-top: 10px;
 }
 .adviceLink {
@@ -112,8 +124,12 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
-  color: #2455ef;
+  font-size: var(--text-action);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .filters {
   display: grid;
@@ -122,7 +138,7 @@
 }
 .filters label > span {
   display: block;
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -149,7 +165,7 @@
   min-width: 0;
 }
 .filters label > div:focus-within {
-  outline: 2px solid #2455ef;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 .filters input:focus-visible,
@@ -158,7 +174,7 @@
 }
 .filters svg {
   flex-shrink: 0;
-  color: #68758a;
+  color: var(--muted);
 }
 .searchLabel button {
   display: grid;
@@ -180,15 +196,19 @@
   gap: 15px;
 }
 .resultBar p {
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .resultBar button {
-  font-size: 12px;
+  font-size: var(--text-action);
   border: 0;
   background: none;
   min-height: 44px;
   padding: 10px;
-  color: #2455ef;
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .modelGroups {
   display: grid;
@@ -197,15 +217,19 @@
 }
 .modelGroup h4 {
   padding: 17px 0;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: var(--text-card);
+  font-weight: 400;
   border-top: 0;
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1.12;
 }
 .modelGroup {
   min-width: 0;
   padding: 8px 18px 18px;
   background: rgba(255, 255, 255, 0.88);
-  border: 1px solid #dce5f2;
+  border: 1px solid var(--line);
   border-radius: 10px;
 }
 .modelGroup ul {
@@ -219,24 +243,26 @@
   justify-content: space-between;
   gap: 15px;
   padding: 14px 12px;
-  border-bottom: 1px solid #e5eaf2;
+  border-bottom: 1px solid var(--line);
   transition: background 0.2s;
 }
 .modelRow:hover {
-  background: #f4f7fd;
+  background: #fdf7f4;
 }
 .modelName {
   min-width: 0;
 }
 .modelName strong {
   display: block;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }
 .modelName span {
-  font-size: 10px;
-  color: #6c788a;
+  font-size: var(--text-caption);
+  color: var(--muted);
   display: block;
   margin-top: 5px;
 }
@@ -250,9 +276,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 18px;
   min-height: 44px;
   padding: 10px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .quoteLink {
   display: inline-flex;
@@ -263,31 +293,38 @@
   min-width: 88px;
   padding: 12px 15px;
   border-radius: 5px;
-  background: #2455ef;
+  background: var(--accent-ink);
   color: white;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: var(--text-action);
+  font-weight: 400;
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .quoteLink:hover {
-  background: #1644d2;
+  background: var(--accent-hover);
 }
 .availability {
-  font-size: 11px;
+  font-size: var(--text-caption);
   padding-top: 25px;
   max-width: 700px;
 }
 .empty {
   grid-column: 1/-1;
-  background: #f5f7fc;
+  background: var(--surface);
   padding: 35px;
   border-radius: 6px;
 }
 .empty h4 {
-  font-size: 21px;
-  font-weight: 500;
+  font-size: var(--text-card);
+  font-weight: 400;
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1.12;
 }
 .empty p {
-  font-size: 13px;
+  font-size: var(--text-body);
   margin: 15px 0 25px;
 }
 .solutionGrid {
@@ -298,7 +335,7 @@
 }
 .solutionGrid article {
   padding: 27px;
-  border: 1px solid #dce3ef;
+  border: 1px solid var(--line);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
@@ -306,12 +343,15 @@
   background: rgba(255, 255, 255, 0.88);
 }
 .solutionGrid h4 {
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.025em;
+  font-size: var(--text-card);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 1.12;
 }
 .solutionGrid p {
-  font-size: 12px;
+  font-size: var(--text-body);
   margin-top: 15px;
   margin-bottom: 22px;
 }
@@ -321,13 +361,17 @@
   align-items: center;
   gap: 15px;
   min-height: 44px;
-  font-size: 12px;
-  color: #2455ef;
-  font-weight: 500;
+  font-size: var(--text-action);
+  color: var(--accent-ink);
+  font-weight: 400;
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 @media (max-width: 800px) {
   .familyNav {
     top: 78px;
+    background: rgb(255 255 255 / 97%);
   }
   .familyTabs {
     grid-template-columns: 1fr 1fr;
@@ -335,7 +379,6 @@
   }
   .familyTabs button {
     min-height: 48px;
-    font-size: 12px;
     padding: 10px;
   }
   .familyPanel {
@@ -350,14 +393,10 @@
     height: 160px;
   }
   .familyCopy h2 {
-    font-size: 31px;
     margin: 12px 0;
   }
   .familyCopy > .eyebrow {
     display: none;
-  }
-  .familyCopy > p {
-    font-size: 13px;
   }
   .familyActions {
     margin-top: 15px;
@@ -365,8 +404,12 @@
   }
   .familyActions :global(.button) {
     min-height: 48px;
-    font-size: 12px;
+    font-size: var(--text-action);
     padding: 14px 18px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
   }
   .modelSection,
   .solutions {
@@ -378,7 +421,12 @@
   }
   .modelHeading h3,
   .solutions > h3 {
-    font-size: 27px;
+    font-size: var(--text-heading);
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    line-height: 1.12;
   }
   .adviceLink {
     margin-top: 8px;
@@ -394,15 +442,13 @@
   .modelRow {
     padding: 13px 0;
   }
-  .modelName strong {
-    font-size: 15px;
-  }
   .rowActions {
     gap: 3px;
   }
   .quoteLink {
     min-width: 79px;
     padding: 12px;
+    background: var(--accent-ink);
   }
   .detailLink {
     padding: 9px;
@@ -414,29 +460,17 @@
   .solutionGrid article {
     padding: 23px;
   }
-  .solutionQuote {
-    font-size: 13px;
-  }
-  .availability {
-    font-size: 10px;
-  }
 }
 @media (max-width: 360px) {
-  .familyTabs button {
-    font-size: 11px;
-  }
-  .modelName strong {
-    font-size: 14px;
-  }
   .rowActions {
     gap: 0;
   }
   .quoteLink {
     min-width: 70px;
     gap: 6px;
+    background: var(--accent-ink);
   }
   .detailLink {
-    font-size: 11px;
     padding: 8px;
   }
 }
@@ -474,11 +508,27 @@
     scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;
     padding-bottom: 15px;
-    scrollbar-width: thin;
-    scrollbar-color: #91a9d5 #edf1f7;
+    scrollbar-width: none;
   }
   .solutionGrid article {
     scroll-snap-align: start;
     min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .familyTabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .familyTabs button {
+    padding: 8px 10px;
+    min-height: 44px;
+  }
+  .modelRow {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+  .rowActions {
+    margin-left: auto;
   }
 }

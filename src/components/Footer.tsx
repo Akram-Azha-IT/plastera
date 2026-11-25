@@ -1,45 +1,48 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import PlasteraLogo from "./PlasteraLogo";
+import s from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="shell">
-        <div className="footer-top">
-          <div>
-            <PlasteraLogo />
+    <footer className={"site-footer " + s.footer}>
+      <div className={s.inner}>
+        <div className={s.top}>
+          <div className={s.identity}>
+            <PlasteraLogo className={s.brand} />
             <p>
-              La technologie japonaise.
+              Machines et matières
               <br />
-              L’ambition industrielle française.
+              pour la plasturgie.
             </p>
           </div>
-          <div>
-            <span className="eyebrow">Explorer</span>
+          <nav className={s.navigation} aria-label="Navigation du pied de page">
+            <h2 className={s.heading}>Découvrir</h2>
             <Link href="/machines">Machines Shibaura</Link>
             <Link href="/matieres-premieres">Matières premières</Link>
             <Link href="/applications">Applications</Link>
-          </div>
-          <div>
-            <span className="eyebrow">Échanger</span>
-            <Link href="/contact">
-              Présenter votre projet <ArrowUpRight size={16} />
+            <Link href="/expertise">Notre expertise</Link>
+          </nav>
+          <div className={s.contact}>
+            <h2 className={s.heading}>Échanger</h2>
+            <Link className={s.project} href="/contact">
+              Présenter votre projet{" "}
+              <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
             <a
+              className={s.email}
               href="mailto:contact@plastera-europe.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               contact@plastera-europe.com
             </a>
-            <Link href="/expertise">Notre approche</Link>
           </div>
         </div>
-        <div className="footer-bottom">
+        <div className={s.bottom}>
           <span>© 2026 Plastera</span>
-          <span>Représentant exclusif Shibaura Machine en France</span>
           <Link href="/contact#confidentialite">Confidentialité</Link>
-          <Link href="/credits-photos">Crédits photos</Link>
+          <p>Représentant exclusif Shibaura Machine en France</p>
         </div>
       </div>
     </footer>

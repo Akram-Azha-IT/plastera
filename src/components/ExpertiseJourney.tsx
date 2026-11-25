@@ -3,7 +3,7 @@
 import { useId, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scrollPageTo } from "@/lib/pageScroll";
@@ -249,9 +249,6 @@ export default function ExpertiseJourney() {
         </div>
         <div className={s.footer} aria-hidden="true">
           <span>De l’équipement à la matière, pensés ensemble.</span>
-          <span className={s.scrollCue}>
-            Au fil du défilement <ArrowDown size={14} />
-          </span>
           <span className={s.progress}>
             <span data-journey-progress />
           </span>

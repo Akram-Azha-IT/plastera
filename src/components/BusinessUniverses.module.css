@@ -1,0 +1,232 @@
+.section {
+  background: #fff;
+  color: #101b2e;
+  padding: 40px 0 72px;
+}
+.inner {
+  max-width: 1600px;
+  margin: auto;
+}
+.header {
+  margin: 0 5% 28px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+}
+.eyebrow,
+.header h2,
+.label,
+.content h3,
+.action {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+.eyebrow {
+  font-size: 17px;
+  color: var(--accent-ink);
+}
+.header h2 {
+  font-size: 30px;
+  line-height: 1.3;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0 5%;
+}
+.card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  padding: clamp(24px, 2.5vw, 36px);
+  overflow: hidden;
+  border: 1px solid #ffffff26;
+  border-radius: 8px;
+  background: #061323;
+  color: #fff;
+}
+.media {
+  position: absolute;
+  inset: -6% 0;
+  z-index: -2;
+}
+.image {
+  object-fit: cover;
+  object-position: 61% center;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.card[data-universe="matieres"] .image {
+  object-position: 68% center;
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    #0411208c,
+    #0411201a 25%,
+    #041120c9 60%,
+    #041120f5 100%
+  );
+  pointer-events: none;
+}
+.label {
+  font-size: 17px;
+  line-height: 1.4;
+  color: #ff9b6b;
+}
+.content {
+  margin-top: 36px;
+}
+.content h3 {
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 1.05;
+}
+.content p {
+  max-width: 340px;
+  min-height: 3.4em;
+  margin: 14px 0 18px;
+  color: #dbe3ec;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.compact {
+  display: none;
+}
+.action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid #ffffff3d;
+  padding-top: 18px;
+  font-size: 21px;
+  line-height: 1.3;
+}
+.arrow {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--accent-bright);
+  border-radius: 4px;
+  color: #ff9b6b;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.arrow svg {
+  transition: transform 0.3s;
+}
+.card:focus-visible {
+  outline: 3px solid #ff9b6b;
+  outline-offset: -5px;
+}
+.card:is(:hover, :focus-visible) .arrow {
+  background: var(--accent);
+  color: #fff;
+}
+.card:is(:hover, :focus-visible) .arrow svg {
+  transform: translate(2px, -2px);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .image {
+    transform: scale(1.045);
+  }
+}
+@media (max-width: 1000px) {
+  .card {
+    min-height: 360px;
+  }
+  .label {
+    max-width: 220px;
+  }
+  .content {
+    margin-top: 30px;
+  }
+  .content p {
+    min-height: 5.1em;
+  }
+}
+@media (max-width: 700px) {
+  .section {
+    padding: 28px 0 40px;
+  }
+  .header {
+    margin: 0 6% 24px;
+    display: grid;
+    gap: 10px;
+  }
+  .eyebrow {
+    font-size: 16px;
+  }
+  .header h2 {
+    font-size: 27px;
+  }
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 6%;
+  }
+  .card {
+    min-width: 0;
+    min-height: 300px;
+    padding: clamp(12px, 3vw, 18px);
+    justify-content: flex-end;
+  }
+  .label,
+  .full {
+    display: none;
+  }
+  .compact {
+    display: inline;
+  }
+  .content {
+    margin-top: 90px;
+  }
+  .content h3 {
+    font-size: clamp(24px, 7vw, 34px);
+    line-height: 1.08;
+  }
+  .content p {
+    font-size: 11px;
+    line-height: 1.5;
+    min-height: 4.5em;
+    margin: 10px 0 14px;
+  }
+  .action {
+    font-size: 16px;
+    gap: 8px;
+    padding-top: 12px;
+  }
+  .arrow {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  .arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .arrow,
+  .arrow svg {
+    transition: none;
+  }
+  .card:hover .image,
+  .card:is(:hover, :focus-visible) .arrow svg {
+    transform: none;
+  }
+}

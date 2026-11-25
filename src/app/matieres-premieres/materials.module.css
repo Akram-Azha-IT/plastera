@@ -2,7 +2,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: #eff4fb;
+  background: #fbf3ef;
 }
 .heroImage {
   object-fit: cover;
@@ -15,10 +15,10 @@
   z-index: -1;
   background: linear-gradient(
     90deg,
-    rgba(248, 250, 254, 0.97) 0%,
-    rgba(248, 250, 254, 0.92) 30%,
-    rgba(248, 250, 254, 0.35) 65%,
-    rgba(248, 250, 254, 0.08)
+    rgba(254, 250, 248, 0.97) 0%,
+    rgba(254, 250, 248, 0.92) 30%,
+    rgba(254, 250, 248, 0.35) 65%,
+    rgba(254, 250, 248, 0.08)
   );
 }
 .heroInner {
@@ -32,20 +32,24 @@
   animation: arrive 0.85s ease both;
 }
 .heroCopy :global(.eyebrow) {
-  color: #50627c;
+  color: var(--muted);
 }
 .heroCopy h1 {
-  font-size: clamp(44px, 5.6vw, 82px);
+  font-size: var(--text-hero);
   margin: 26px 0;
-  letter-spacing: -0.065em;
+  letter-spacing: var(--tracking-display);
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.12;
 }
 .heroCopy h1 span {
-  color: #2455ef;
+  color: var(--accent-ink);
 }
 .heroCopy > p {
   max-width: 425px;
-  font-size: 16px;
-  color: #52627b;
+  font-size: var(--text-body);
+  color: var(--muted);
 }
 .heroAction {
   display: inline-flex;
@@ -54,13 +58,17 @@
   min-height: 50px;
   margin-top: 30px;
   padding: 15px 22px;
-  background: #2455ef;
+  background: var(--accent);
   color: white;
-  font-size: 13px;
+  font-size: var(--text-action);
   transition: background 0.2s;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .heroAction:hover {
-  background: #173db8;
+  background: var(--accent-ink);
 }
 .content {
   padding-top: 70px;
@@ -78,15 +86,20 @@
   margin-bottom: 28px;
 }
 .explorerHeader h2 {
-  font-size: clamp(38px, 4.4vw, 66px);
+  font-size: var(--text-section);
   margin-top: 20px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1.12;
 }
 .explorerHeader h2 span {
-  color: #2455ef;
+  color: var(--accent-ink);
 }
 .explorerHeader > p {
   max-width: 330px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .familyLinks {
   display: flex;
@@ -98,13 +111,17 @@
   align-items: center;
   gap: 24px;
   min-height: 46px;
-  font-size: 13px;
-  color: #52627b;
-  border-bottom: 1px solid #cad5e7;
+  font-size: var(--text-action);
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .familyLinks a:hover {
-  color: #2455ef;
-  border-color: #2455ef;
+  color: var(--accent-ink);
+  border-color: var(--accent-ink);
 }
 .family {
   margin-bottom: 80px;
@@ -119,48 +136,16 @@
   margin-bottom: 20px;
 }
 .familyHeader :global(.eyebrow) {
-  color: #697991;
+  color: var(--muted);
 }
 .familyHeader h3 {
-  font-size: clamp(26px, 3vw, 40px);
-  line-height: 1.1;
-  font-weight: 500;
-  letter-spacing: -0.05em;
+  font-size: var(--text-heading);
+  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
   margin-top: 12px;
-}
-.galleryControls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.galleryControls > span {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-right: 14px;
-  font-size: 11px;
-  color: #697991;
-}
-.galleryControls button {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid #d4deed;
-  border-radius: 50%;
-  background: #fff;
-  color: #101b2e;
-  transition:
-    background 0.25s,
-    color 0.25s;
-}
-.galleryControls button:hover:not(:disabled) {
-  background: #2455ef;
-  color: white;
-}
-.galleryControls button:disabled {
-  opacity: 0.35;
-  cursor: default;
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }
 .materialIndex {
   display: flex;
@@ -174,16 +159,20 @@
   min-height: 44px;
   min-width: 44px;
   justify-content: center;
-  font-size: 11px;
-  color: #697991;
+  font-size: var(--text-action);
+  color: var(--muted);
   border-bottom: 2px solid transparent;
   transition:
     color 0.25s,
     border-color 0.25s;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .materialIndex a[aria-current="true"] {
-  color: #2455ef;
-  border-color: #2455ef;
+  color: var(--accent-ink);
+  border-color: var(--accent-ink);
 }
 .rail {
   position: relative;
@@ -206,7 +195,7 @@
   user-select: none;
 }
 .rail:focus-visible {
-  outline: 2px solid #2455ef;
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
 .materialCard {
@@ -218,8 +207,8 @@
   scroll-margin-top: 115px;
   overflow: hidden;
   border-radius: 12px;
-  background: #f1f5fc;
-  border: 1px solid #e4eaf4;
+  background: var(--surface);
+  border: 1px solid var(--line);
 }
 .cardArt {
   position: relative;
@@ -227,7 +216,7 @@
   overflow: hidden;
   height: 270px;
   flex-shrink: 0;
-  background: #edf3fd;
+  background: #fdf2ed;
 }
 .artPhoto {
   position: absolute;
@@ -246,8 +235,8 @@
   z-index: -1;
   background: linear-gradient(
     90deg,
-    rgba(238, 244, 254, 0.88),
-    rgba(238, 244, 254, 0.05) 90%
+    rgba(254, 243, 238, 0.88),
+    rgba(254, 243, 238, 0.05) 90%
   );
 }
 .artCode {
@@ -255,10 +244,12 @@
   left: 35px;
   bottom: 18px;
   font-size: clamp(90px, 10vw, 150px);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 0.85;
-  letter-spacing: -0.085em;
-  color: #2455ef;
+  letter-spacing: var(--tracking-display);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }
 .artCode > span {
   display: block;
@@ -274,10 +265,11 @@
 .artCaption {
   position: absolute;
   right: 17px;
-  bottom: 15px;
-  font-size: 8px;
+  bottom: auto;
+  font-size: var(--text-caption);
   letter-spacing: 0.04em;
-  color: #52627b;
+  color: var(--muted);
+  top: 16px;
 }
 .cardCopy {
   flex: 1;
@@ -287,20 +279,22 @@
 }
 .grade {
   display: block;
-  font-size: 10px;
-  color: #6a7890;
+  font-size: var(--text-caption);
+  color: var(--muted);
   margin-bottom: 12px;
   line-height: 1.5;
 }
 .cardCopy h4 {
-  font-size: clamp(21px, 2.2vw, 29px);
+  font-size: var(--text-card);
   line-height: 1.12;
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
   margin-bottom: 14px;
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }
 .cardCopy > p {
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.7;
   margin-bottom: 20px;
 }
@@ -311,9 +305,13 @@
   justify-content: space-between;
   gap: 20px;
   min-height: 52px;
-  font-size: 12px;
-  border-top: 1px solid #d6dfed;
-  color: #2455ef;
+  font-size: var(--text-action);
+  border-top: 1px solid var(--line);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .cardQuote svg {
   transition: transform 0.3s;
@@ -322,62 +320,31 @@
   transform: translate(3px, -3px);
 }
 .family[data-tone="blue"] .materialCard {
-  background: #122544;
-  border-color: #122544;
+  background: var(--night);
+  border-color: var(--night);
   color: white;
 }
 .family[data-tone="blue"] .cardArt {
-  background: #173664;
+  background: var(--night);
 }
 .family[data-tone="blue"] .artVeil {
-  background: linear-gradient(
-    90deg,
-    rgba(15, 37, 73, 0.94),
-    rgba(25, 70, 155, 0.55) 60%,
-    rgba(49, 94, 184, 0.12)
-  );
+  background: linear-gradient(90deg, #08182be6, #08182b55 70%, #08182b10);
 }
 .family[data-tone="blue"] .artCode {
   color: #fff;
 }
 .family[data-tone="blue"] .artCaption {
-  color: #d3def2;
+  color: #f2ddd3;
 }
 .family[data-tone="blue"] .grade {
-  color: #a1b9de;
+  color: #ff9b6b;
 }
 .family[data-tone="blue"] .cardCopy > p {
-  color: #bdcde6;
+  color: #dbe3ec;
 }
 .family[data-tone="blue"] .cardQuote {
-  color: #dce8ff;
+  color: #ffe8dc;
   border-color: #365074;
-}
-.railFooter {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding-top: 14px;
-  color: #667b98;
-  font-size: 10px;
-}
-.railFooter > span:first-child {
-  color: #2455ef;
-  min-width: 90px;
-}
-.progress {
-  flex: 1;
-  height: 2px;
-  background: #e3e9f3;
-  overflow: hidden;
-}
-.progress > span {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background: #2455ef;
-  transform: scaleX(0.1);
-  transform-origin: left;
 }
 @media (hover: hover) and (pointer: fine) {
   .materialCard:hover .artImage {
@@ -401,9 +368,6 @@
   .cardCopy {
     padding: 24px 22px 12px;
   }
-  .galleryControls > span {
-    display: none;
-  }
 }
 @media (max-width: 800px) {
   .heroInner {
@@ -412,19 +376,16 @@
   .heroCopy {
     padding: 48px 0 70px;
   }
-  .heroCopy h1 {
-    font-size: clamp(39px, 7vw, 58px);
-  }
   .heroCopy > p {
     max-width: 350px;
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .heroVeil {
     background: linear-gradient(
       90deg,
-      rgba(248, 250, 254, 0.95),
-      rgba(248, 250, 254, 0.78) 50%,
-      rgba(248, 250, 254, 0.3)
+      rgba(254, 250, 248, 0.95),
+      rgba(254, 250, 248, 0.78) 50%,
+      rgba(254, 250, 248, 0.3)
     );
   }
   .content {
@@ -437,12 +398,10 @@
     gap: 18px;
   }
   .explorerHeader h2 {
-    font-size: clamp(35px, 6vw, 48px);
     margin-top: 15px;
   }
   .explorerHeader > p {
     max-width: 420px;
-    font-size: 13px;
   }
   .familyLinks {
     margin-bottom: 35px;
@@ -455,19 +414,11 @@
     gap: 16px;
   }
   .familyHeader h3 {
-    font-size: 27px;
     max-width: 240px;
-  }
-  .galleryControls button {
-    width: 44px;
-    height: 44px;
   }
   .materialIndex {
     gap: 0 14px;
     margin-bottom: 12px;
-  }
-  .materialIndex a {
-    font-size: 10px;
   }
   .rail {
     gap: 14px;
@@ -491,21 +442,6 @@
   .cardCopy {
     padding: 23px 23px 10px;
   }
-  .cardCopy h4 {
-    font-size: 25px;
-  }
-  .cardCopy > p {
-    font-size: 13px;
-  }
-  .grade {
-    font-size: 10px;
-  }
-  .railFooter {
-    gap: 14px;
-  }
-  .railFooter > span:first-child {
-    min-width: 75px;
-  }
 }
 @media (max-width: 480px) {
   .heroInner {
@@ -516,15 +452,14 @@
     padding: 36px 0 65px;
   }
   .heroCopy h1 {
-    font-size: clamp(34px, 8.5vw, 42px);
     margin: 20px 0;
   }
   .heroCopy > p {
     max-width: 285px;
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .heroCopy :global(.eyebrow) {
-    font-size: 9px;
+    font-size: var(--text-label);
   }
   .heroImage {
     object-position: 70% bottom;
@@ -532,10 +467,10 @@
   .heroVeil {
     background: linear-gradient(
       180deg,
-      rgba(248, 250, 254, 0.98),
-      rgba(248, 250, 254, 0.92) 30%,
-      rgba(248, 250, 254, 0.64) 62%,
-      rgba(248, 250, 254, 0.04)
+      rgba(254, 250, 248, 0.98),
+      rgba(254, 250, 248, 0.92) 30%,
+      rgba(254, 250, 248, 0.64) 62%,
+      rgba(254, 250, 248, 0.04)
     );
   }
   .heroAction {
@@ -546,18 +481,10 @@
     gap: 8px;
   }
   .familyHeader h3 {
-    font-size: 25px;
     max-width: 180px;
   }
   .familyHeader :global(.eyebrow) {
-    font-size: 8px;
-  }
-  .galleryControls {
-    gap: 5px;
-  }
-  .galleryControls button {
-    width: 44px;
-    height: 44px;
+    font-size: var(--text-label);
   }
   .cardArt {
     height: 175px;
@@ -572,29 +499,25 @@
   .cardCopy {
     padding: 20px 20px 8px;
   }
-  .cardCopy h4 {
-    font-size: 22px;
-  }
-  .cardCopy > p {
-    font-size: 13px;
-  }
   .artCaption {
-    font-size: 7px;
     right: 12px;
-  }
-  .cardQuote {
-    font-size: 12px;
+    bottom: auto;
+    top: 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .heroCopy {
     animation: none;
   }
-  .heroAction,
-  .artImage,
-  .cardQuote svg,
-  .materialIndex a,
-  .galleryControls button {
-    transition: none;
-  }
+}
+
+.familyLinks {
+  flex-wrap: wrap;
+  gap: 12px 25px;
+}
+.familyLinks a {
+  min-width: 0;
+}
+.familyHeader > div:first-child {
+  min-width: 0;
 }

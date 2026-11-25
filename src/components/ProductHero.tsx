@@ -354,7 +354,7 @@ export default function ProductHero() {
           data-scene-scroller
           tabIndex={0}
           role="group"
-          aria-label="Faites défiler la page, balayez ou utilisez les flèches pour parcourir les trois univers"
+          aria-label="Nos univers : injection, robotique et matières"
           onKeyDown={(event) => {
             if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
               event.preventDefault();

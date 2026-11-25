@@ -1,5 +1,5 @@
 .page {
-  background: #edf2f9;
+  background: var(--paper);
 }
 .hero {
   position: relative;
@@ -42,24 +42,27 @@
   padding: 75px 0 90px;
 }
 .heroCopy > :global(.eyebrow) {
-  color: #d4e0f6;
+  color: #f6dfd4;
   animation: rise 0.8s 0.1s both;
 }
 .heroCopy h1 {
-  font-size: clamp(44px, 5.8vw, 80px);
-  line-height: 1.04;
-  letter-spacing: -0.06em;
+  font-size: var(--text-hero);
+  line-height: 1.12;
+  letter-spacing: var(--tracking-display);
   margin: 25px 0;
   animation: rise 1s 0.18s both;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
 }
 .heroCopy h1 span {
   display: block;
-  color: #b9ceff;
+  color: #ff9b6b;
 }
 .heroCopy > p {
-  font-size: 15px;
+  font-size: var(--text-body);
   max-width: 590px;
-  color: #d7e1f3;
+  color: #dbe3ec;
   animation: rise 1s 0.27s both;
 }
 .heroAction {
@@ -69,19 +72,24 @@
   gap: 34px;
   min-height: 50px;
   padding: 14px 20px;
-  border: 1px solid #a5bbdf;
-  background: rgba(203, 221, 255, 0.08);
+  border: 1px solid #dfb8a5;
+  background: #ffffff0f;
   color: #fff;
-  font-size: 12px;
+  font-size: var(--text-action);
   margin-top: 27px;
   transition:
     background 0.25s,
     border-color 0.25s;
   animation: rise 1s 0.36s both;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  border-color: #ffffff70;
 }
 .heroAction:hover {
-  background: #2455ef;
-  border-color: #2455ef;
+  background: var(--accent-ink);
+  border-color: var(--accent-ink);
 }
 .heroAction:focus-visible {
   outline-color: #fff;
@@ -90,10 +98,10 @@
   position: absolute;
   right: 4.5%;
   bottom: 25px;
-  color: #dce7fb;
+  color: #fbe6dc;
   background: rgba(8, 21, 43, 0.75);
   padding: 8px 12px;
-  font-size: 10px;
+  font-size: var(--text-caption);
   line-height: 1.5;
 }
 .field {
@@ -101,13 +109,7 @@
   isolation: isolate;
   scroll-margin-top: 100px;
   padding-top: 48px;
-  background:
-    radial-gradient(
-      ellipse at 95% 12%,
-      rgba(95, 142, 237, 0.13),
-      transparent 55%
-    ),
-    linear-gradient(160deg, #edf2fa, #f7f9fc 45%, #e9f0fa);
+  background: var(--paper);
 }
 .field::before {
   content: "";
@@ -115,40 +117,26 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(71, 105, 164, 0.04) 0 1px,
-    transparent 1px 120px
-  );
+  background: none;
   mask-image: linear-gradient(#000, transparent 85%);
 }
 .page[data-theme="machines"] .heroInner {
   min-height: 490px;
 }
 .page[data-theme="applications"] .field {
-  background:
-    radial-gradient(
-      ellipse at 8% 15%,
-      rgba(108, 148, 228, 0.14),
-      transparent 55%
-    ),
-    linear-gradient(170deg, #eef3fb, #e4edf9 60%, #f4f7fc);
+  background: var(--paper);
 }
 .page[data-theme="applications"] .field::before {
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(71, 105, 164, 0.035) 0 1px,
-    transparent 1px 120px
-  );
+  background: none;
 }
 .page[data-theme="applications"] :global(.application-row) {
   gap: 6%;
   padding: 28px;
   margin-bottom: 38px;
   background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(194, 209, 233, 0.7);
+  border: 1px solid rgba(233, 207, 194, 0.7);
   border-radius: 12px;
-  box-shadow: 0 15px 45px rgba(33, 61, 105, 0.035);
+  box-shadow: 0 15px 45px rgba(105, 57, 33, 0.035);
 }
 .page[data-theme="applications"] :global(.application-image) {
   border-radius: 6px;
@@ -161,7 +149,7 @@
 .page[data-theme="expertise"] :global(.approach-explorer) {
   padding: 35px;
   background: rgba(255, 255, 255, 0.85);
-  border: 1px solid #dce5f2;
+  border: 1px solid var(--line);
   border-radius: 12px;
 }
 @keyframes rise {
@@ -184,12 +172,12 @@
     padding: 46px 0 76px;
   }
   .heroCopy h1 {
-    font-size: clamp(37px, 6.3vw, 55px);
     margin: 22px 0;
   }
   .heroCopy > p {
-    font-size: 14px;
+    font-size: var(--text-body);
     max-width: 490px;
+    color: #dbe3ec;
   }
   .heroImage {
     object-position: var(--hero-mobile-focal);
@@ -204,14 +192,16 @@
   }
   .heroAction {
     margin-top: 23px;
+    border-color: #ffffff70;
+    background: #ffffff0f;
   }
   .caption {
-    font-size: 9px;
     right: 5%;
     bottom: 18px;
   }
   .field {
     padding-top: 30px;
+    background: var(--paper);
   }
   .page[data-theme="machines"] :global(.page-content) {
     padding-bottom: 40px;
@@ -240,24 +230,29 @@
   .heroCopy {
     padding: 36px 0 74px;
   }
-  .heroCopy h1 {
-    font-size: clamp(33px, 8.5vw, 41px);
-  }
   .heroCopy > p {
-    font-size: 13px;
+    font-size: var(--text-body);
+    color: #dbe3ec;
   }
   .heroCopy > :global(.eyebrow) {
-    font-size: 9px;
+    font-size: var(--text-label);
   }
   .heroAction {
     padding: 12px 17px;
     min-height: 46px;
+    border-color: #ffffff70;
+    background: #ffffff0f;
   }
   .page[data-theme="applications"] :global(.application-row) {
     padding: 16px;
   }
   .page[data-theme="applications"] :global(.application-row h2) {
-    font-size: 31px;
+    font-size: var(--text-section);
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    line-height: 1.12;
   }
   .page[data-theme="expertise"] :global(.approach-explorer) {
     padding: 18px;

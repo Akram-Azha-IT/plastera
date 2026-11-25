@@ -43,6 +43,11 @@
 }
 .content h3 {
   margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1.12;
 }
 .content button,
 .titleLink {
@@ -57,10 +62,12 @@
   text-align: left;
   padding: 0;
   font-size: clamp(20px, 2vw, 29px);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.12;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--tracking-display);
   cursor: pointer;
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }
 .content button svg,
 .titleLink svg {
@@ -81,14 +88,14 @@
     margin 0.45s;
 }
 .panel[data-active="true"] .details {
-  max-height: 180px;
+  max-height: 260px;
   opacity: 1;
   margin-top: 18px;
 }
 .details p {
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 1.7;
-  color: #dae4f5;
+  color: #f5e3da;
   max-width: 300px;
 }
 .link {
@@ -97,12 +104,15 @@
   gap: 17px;
   justify-self: start;
   color: white;
-  font-size: 11px;
-  font-weight: 500;
+  font-size: var(--text-action);
+  font-weight: 400;
   padding: 12px 0 7px;
   margin-top: 12px;
-  border-bottom: 1px solid #9cb2d5;
+  border-bottom: 1px solid #d5af9c;
   white-space: nowrap;
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
 }
 .link:hover {
   border-color: #fff;
@@ -125,6 +135,10 @@
   .content button,
   .titleLink {
     font-size: 26px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
   }
   .details,
   .panel[data-active="true"] .details {
@@ -132,9 +146,6 @@
     max-height: none;
     opacity: 1;
     margin-top: 16px;
-  }
-  .details p {
-    font-size: 11px;
   }
   .details[inert] {
     visibility: visible;
@@ -154,12 +165,10 @@
   .content button,
   .titleLink {
     font-size: 29px;
-  }
-  .details p {
-    font-size: 12px;
-  }
-  .link {
-    font-size: 12px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -177,46 +186,14 @@
   overflow-wrap: break-word;
 }
 .panel:focus-within .details {
-  max-height: 180px;
+  max-height: 260px;
   opacity: 1;
   margin-top: 18px;
 }
 .explorer {
   min-width: 0;
 }
-.swipeToolbar {
-  display: none;
-}
 @media (max-width: 1000px) {
-  .swipeToolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-  }
-  .swipeToolbar > span {
-    font-size: 11px;
-    color: #66758a;
-  }
-  .swipeToolbar > div {
-    display: flex;
-    gap: 7px;
-  }
-  .swipeToolbar button {
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #d7dfeb;
-    background: white;
-    color: #101b2e;
-    border-radius: 4px;
-  }
-  .swipeToolbar button:disabled {
-    opacity: 0.3;
-    cursor: default;
-  }
   .families {
     display: grid;
     grid-auto-flow: column;
@@ -229,8 +206,7 @@
     scroll-padding-inline: 0;
     padding-bottom: 16px;
     overscroll-behavior-x: contain;
-    scrollbar-width: thin;
-    scrollbar-color: #91a9d5 #edf1f7;
+    scrollbar-width: none;
   }
   .panel {
     min-height: 315px;
@@ -245,6 +221,10 @@
   .content button,
   .titleLink {
     font-size: 26px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
   }
 }
 @media (max-width: 650px) {
@@ -258,8 +238,14 @@
   .content button,
   .titleLink {
     font-size: 27px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
   }
-  .details p {
-    font-size: 12px;
-  }
+}
+
+.families:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 4px;
 }

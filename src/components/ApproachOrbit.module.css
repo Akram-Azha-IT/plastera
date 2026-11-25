@@ -22,16 +22,16 @@
   width: min(100% - 100px, 340px);
   aspect-ratio: 1;
   margin: 58px 0 24px;
-  border: 1px solid #b8cbed;
+  border: 1px solid #edcab8;
   border-radius: 50%;
-  background: radial-gradient(circle, #e0eaff, transparent 70%);
+  background: radial-gradient(circle, #ffeae0, transparent 70%);
 }
 .orbit::before {
   content: "";
   position: absolute;
   inset: 8%;
   border-radius: 50%;
-  border: 1px solid rgb(167 193 236 / 25%);
+  border: 1px solid rgb(236 190 167 / 25%);
 }
 .core {
   position: absolute;
@@ -43,9 +43,9 @@
   gap: 15px;
   text-align: center;
   border-radius: 50%;
-  background: linear-gradient(145deg, #fff, #e9f0ff);
+  background: linear-gradient(145deg, #fff, #fff0e9);
   border: 1px solid rgb(255 255 255 / 90%);
-  box-shadow: 0 18px 55px rgb(43 84 163 / 8%);
+  box-shadow: 0 18px 55px rgb(163 83 43 / 8%);
 }
 .coreEyebrow {
   color: #506989;
@@ -60,7 +60,7 @@
   font-style: italic;
   letter-spacing: -0.045em;
   line-height: 1.05;
-  color: #16366a;
+  color: #6a3216;
 }
 .coreLabel {
   max-width: 82%;
@@ -81,7 +81,12 @@
   position: absolute;
   inset: -1px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, transparent 65%, #8aaff0 92%, #2455ef);
+  background: conic-gradient(
+    from 0deg,
+    transparent 65%,
+    #f0ac8a 92%,
+    var(--accent)
+  );
   mask: radial-gradient(
     farthest-side,
     transparent calc(100% - 2px),
@@ -99,14 +104,14 @@
   background: radial-gradient(
     circle at 30% 25%,
     #fff 0%,
-    #c5dcff 12%,
-    #4d81fb 36%,
-    #214ad0 65%,
-    #102858 100%
+    #ffd8c5 12%,
+    var(--accent-bright) 36%,
+    var(--accent-hover) 65%,
+    #602408 100%
   );
   box-shadow:
-    0 5px 18px rgb(36 85 239 / 30%),
-    inset -3px -4px 7px rgb(5 28 94 / 25%);
+    0 5px 18px rgb(239 104 36 / 30%),
+    inset -3px -4px 7px rgb(94 32 5 / 25%);
 }
 .playback {
   display: inline-flex;
@@ -121,7 +126,7 @@
   font-size: 10px;
 }
 .playback:hover {
-  color: #2455ef;
+  color: var(--accent-ink);
 }
 .content {
   min-width: 0;
@@ -165,8 +170,8 @@
   height: 12px;
   border-radius: 50%;
   border: 2px solid #f4f6fa;
-  background: #9ab2d6;
-  box-shadow: 0 0 0 1px #c0cfe5;
+  background: #d6ae9a;
+  box-shadow: 0 0 0 1px #e5ccc0;
 }
 .stopLabel {
   position: absolute;
@@ -182,11 +187,11 @@
   bottom: calc(100% + 3px);
 }
 .stop[aria-selected="true"] {
-  color: #2455ef;
+  color: var(--accent-ink);
   font-weight: 600;
 }
 .stop[aria-selected="true"] .stopDot {
-  background: #2455ef;
+  background: var(--accent);
 }
 .panels {
   display: grid;
@@ -213,7 +218,7 @@
 }
 .focus {
   display: block;
-  color: #41689c;
+  color: #9c5f41;
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;

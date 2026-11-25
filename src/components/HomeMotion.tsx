@@ -57,25 +57,44 @@ export default function HomeMotion({
               });
             });
 
-          // One scrubbed animation gives the sentence a single, legible reading rhythm.
-          const words = scope.querySelectorAll("[data-reading-word]");
-          gsap.fromTo(
-            words,
-            { color: "#8490a2" },
-            {
-              color: "#101b2e",
-              stagger: 0.08,
-              duration: 0.25,
-              ease: "none",
-              scrollTrigger: {
-                trigger: "[data-reading]",
-                start: "top 83%",
-                end: "top 36%",
-                scrub: 0.25,
-              },
-            },
-          );
-
+          gsap.utils
+            .toArray<HTMLElement>("[data-universe-motion]")
+            .forEach((card) => {
+              gsap
+                .timeline({
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top 92%",
+                    once: true,
+                  },
+                })
+                .from(card, {
+                  y: mobile ? 16 : 32,
+                  opacity: 0,
+                  clipPath: "inset(10% 0 0 0 round 8px)",
+                  duration: 0.85,
+                  ease: "power3.out",
+                })
+                .from(
+                  card.querySelector("[data-universe-copy]"),
+                  { y: 22, opacity: 0, duration: 0.7, ease: "power3.out" },
+                  0.16,
+                );
+              gsap.fromTo(
+                card.querySelector("[data-universe-media]"),
+                { yPercent: -3 },
+                {
+                  yPercent: 3,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 0.6,
+                  },
+                },
+              );
+            });
           const aperture = scope.querySelector<HTMLElement>(
             "[data-material-aperture]",
           );
@@ -124,31 +143,6 @@ export default function HomeMotion({
               },
             });
           }
-
-          gsap.utils
-            .toArray<HTMLElement>("[data-sector-motion]")
-            .forEach((row) => {
-              gsap
-                .timeline({
-                  scrollTrigger: { trigger: row, start: "top 90%", once: true },
-                  defaults: { duration: 0.85, ease: "power3.out" },
-                })
-                .from(
-                  row.querySelector("[data-sector-photo]"),
-                  { clipPath: "inset(0 100% 0 0)" },
-                  0,
-                )
-                .from(
-                  row.querySelector("[data-sector-copy]"),
-                  { x: mobile ? 0 : 22, y: mobile ? 16 : 0, opacity: 0 },
-                  0.12,
-                )
-                .from(
-                  row.querySelector("[data-sector-arrow]"),
-                  { scale: 0.7, opacity: 0 },
-                  0.22,
-                );
-            });
         }, scope);
         return () => motion.revert();
       },

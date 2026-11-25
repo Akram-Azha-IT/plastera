@@ -3,12 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
-  MoveHorizontal,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { materialGroups, materials } from "@/data/catalog";
@@ -25,7 +20,6 @@ type Family = (typeof materialGroups)[number];
 function MaterialGallery({ family }: { family: Family }) {
   const root = useRef<HTMLElement>(null);
   const rail = useRef<HTMLDivElement>(null);
-  const progress = useRef<HTMLSpanElement>(null);
   const [position, setPosition] = useState({
     index: 0,
     atStart: true,
@@ -55,14 +49,6 @@ function MaterialGallery({ family }: { family: Family }) {
           ? previous
           : next,
       );
-      if (progress.current)
-        progress.current.style.transform =
-          "scaleX(" +
-          (max > 0
-            ? (node.clientWidth + Math.max(0, node.scrollLeft)) /
-              node.scrollWidth
-            : 1) +
-          ")";
     };
     const schedule = () => {
       cancelAnimationFrame(frame);
@@ -260,32 +246,6 @@ function MaterialGallery({ family }: { family: Family }) {
           </span>
           <h3 id={family.id + "-title"}>{family.label}</h3>
         </div>
-        <div className={s.galleryControls}>
-          <span>
-            <MoveHorizontal size={18} aria-hidden="true" /> Glissez pour
-            découvrir
-          </span>
-          <button
-            type="button"
-            onClick={() => step(-1)}
-            disabled={position.atStart}
-            aria-label={
-              "Matière précédente dans les " + family.label.toLowerCase()
-            }
-          >
-            <ArrowLeft size={19} />
-          </button>
-          <button
-            type="button"
-            onClick={() => step(1)}
-            disabled={position.atEnd}
-            aria-label={
-              "Matière suivante dans les " + family.label.toLowerCase()
-            }
-          >
-            <ArrowRight size={19} />
-          </button>
-        </div>
       </header>
       <nav
         className={s.materialIndex}
@@ -376,13 +336,6 @@ function MaterialGallery({ family }: { family: Family }) {
             </div>
           </article>
         ))}
-      </div>
-      <div className={s.railFooter}>
-        <span>{items[position.index]?.code}</span>
-        <div className={s.progress} aria-hidden="true">
-          <span ref={progress} />
-        </div>
-        <span>Glissez pour explorer</span>
       </div>
     </section>
   );

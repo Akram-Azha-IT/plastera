@@ -50,7 +50,7 @@ export default function Navbar() {
     };
   }, [path]);
   useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 801px)");
+    const desktop = window.matchMedia("(min-width: 961px)");
     const closeOnDesktop = () => {
       if (desktop.matches) setOpen(false);
     };

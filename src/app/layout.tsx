@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { tanker } from "@/lib/fonts";
 import "./globals.css";
 import "lenis/dist/lenis.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -10,28 +10,6 @@ import SmoothScroll from "@/components/SmoothScroll";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const montserrat = localFont({
-  src: [
-    {
-      path: "../../public/fonts/montserrat-regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/montserrat-bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-montserrat",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -55,9 +33,9 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${tanker.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-[#080808] font-sans selection:bg-industrial-blue selection:text-white">
+      <body className="min-h-full flex flex-col bg-white font-sans selection:bg-industrial-blue selection:text-white">
         <a href="#contenu" className="skip-link">
           Aller au contenu
         </a>

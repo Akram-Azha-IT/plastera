@@ -1,10 +1,10 @@
 # Codrops Carousels, Demo 1
 
-The homepage hero adapts Demo 1 from [barvian/CodropsCarousels](https://github.com/barvian/CodropsCarousels), created by Maxwell Barvian for Codrops, based on designs by Francesco Zagami.
+The retained `ProductHero.tsx` component adapts Demo 1 from [barvian/CodropsCarousels](https://github.com/barvian/CodropsCarousels), created by Maxwell Barvian for Codrops, based on designs by Francesco Zagami.
 
 The original `grow`, `text`, `text-up` and `progress` keyframes, 70cqw scroll panels and 30cqw text offset are adapted in `ProductHero.module.css`. React controls and a GSAP fallback extend the original implementation for accessibility and browser support. Original demo images and fonts are not bundled; the site uses its own existing Shibaura and polymer visuals.
 
-The homepage adds a sticky vertical scroll journey that drives the original horizontal animation timelines. Horizontal gestures, keyboard navigation and direct scene selection share the same page scroll position; there is no timed autoplay.
+That component adds a sticky vertical scroll journey that drives the original horizontal animation timelines. Horizontal gestures, keyboard navigation and direct scene selection share the same page scroll position; there is no timed autoplay.
 
 ## Homepage photography
 
@@ -41,3 +41,21 @@ SOFTWARE.
 - hero-robotics-cell.jpg (1903 × 800): TM Robotics, https://www.tmrobotics.com/images/slider/6/1903x800-Untitled%20design.jpg. SCARA robots in a work cell.
 - hero-polypropylene.jpg (3500 × 2499): Quantum Chemical Corporation / Science History Institute, Polypropylene Pellets, via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Polypropylene_Pellets_-_DPLA_-_f7c2fa29d14525ce21219452f4a1a316.jpg. CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Original image retained, responsive framing applied with CSS.
 - Montserrat regular and bold: the font family used by Shibaura Machine, self-hosted under the SIL Open Font License. See public/fonts/OFL-Montserrat.txt.
+
+## Current homepage hero
+
+`ShutterHero.tsx` implements the supplied 14-slice shutter design brief with GSAP. It uses the existing licensed industrial photographs. Construction-themed images and branding from the reference are not bundled.
+
+
+## Tanker typeface
+
+The homepage hero and the machine/material cards use Tanker Regular, published by Indian Type Foundry through [Fontshare](https://www.fontshare.com/fonts/tanker). The font is locally hosted at `public/fonts/Tanker-Regular.otf`. Its ITF Free Font License is included in `public/fonts/Tanker-LICENSE.txt`.
+
+## Supplied Shibaura video
+
+`public/videos/shibaura-hero-preview.mp4` is an optimized derivative of `comp-4_5.mp4`, supplied by the site owner for the homepage hero. It retains the full sequence at 640 × 360, 24 fps, without audio. `public/images/shibaura-video-poster.jpg` is a still from the same video.
+
+
+## Industrial application cards
+
+`IndustrialApplications.tsx` adapts the light rounded-card styling of the site owner’s supplied “Features 10 Orbit” reference to the existing industrial sectors. It reuses the previously documented automotive, packaging and machining photographs. The scrolling layout is independently reconstructed from the publicly shipped “Exclusive Partners” section at [Azhar Plastics](https://azharplastics.com/): desktop sticky heading with a flowing card column, and a mobile horizontal rail. No reference-site partner assets or application source are bundled. Framer Motion provides the reveal animations. Headings and buttons use the existing Tanker typeface; body copy retains Geist. Plastera’s orange replaces the reference’s lime accent.

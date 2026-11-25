@@ -312,7 +312,7 @@ export default function MachineCatalog() {
             className={s.solutions}
             aria-label={"Solutions " + family.title}
           >
-            <h3>Choisissez votre application</h3>
+            <h3>Des solutions pour votre application</h3>
             <p>
               Consultez-nous directement pour la solution qui vous intéresse.
             </p>
